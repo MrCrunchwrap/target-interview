@@ -3,11 +3,20 @@
 		<h1>{{title}}</h1>
 	</div>
 
-	<div class="product__primary-image col-xs-12">
-		<img src="{{primaryImageUrl}}">
+	<div class="slider-for col-xs-12">
+		{{#each thumbnails}}
+			<div>
+				<div class="product__primary-image">
+					<img src="{{this.image}}">
+				</div>
+			</div>
+		{{/each}}
 	</div>
 
-	<div class="product__thumbnails">
+	<div class="product__thumbnails slider-nav col-xs-12">
+		{{#each thumbnails}}
+			<img class="product__thumbnail" src="{{this.image}}">
+		{{/each}}
 	</div>
 
 	{{#with priceData}}
@@ -35,12 +44,12 @@
 		<ul class="list-inline row">
 			{{#if showPickupInStore}}
 				<li class="col-xs-6">
-					<button class="btn btn-secondary btn-block">pick up in a store</button>
+					<button class="btn store-pickup-btn btn-block">pick up in a store</button>
 				</li>
 			{{/if}}
 			{{#if showAddToCart}}
 				<li class="col-xs-6">
-					<button class="btn btn-primary btn-block">add to cart</button>
+					<button class="btn add-to-cart-btn btn-block">add to cart</button>
 				</li>
 			{{/if}}
 		</ul>
@@ -48,6 +57,20 @@
 
 	<div class="product__return-disclaimer col-xs-12">
 
+	</div>
+
+	<div class="product__other-actions-container col-xs-12">
+		<ul class="list-inline row">
+			<li class="col-xs-4">
+				<button class="btn btn-default btn-block">add to registry</button>
+			</li>
+			<li class="col-xs-4">
+				<button class="btn btn-default btn-block">add to list</button>
+			</li>
+			<li class="col-xs-4">
+				<button class="btn btn-default btn-block">share</button>
+			</li>
+		</ul>
 	</div>
 
 	<div class="product-highlights col-xs-12">
