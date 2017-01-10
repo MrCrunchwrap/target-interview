@@ -11,28 +11,39 @@
 	</div>
 
 	{{#with priceData}}
-	<div class="product__price">
-		<p class="price">
-			<strong><span>{{formattedPriceValue}}</span></strong>             
-			<span>&nbsp;{{priceQualifier}}</span>                
-		</p>
+	<div class="product__price-block">
+		<strong><span class="product__display-price">{{formattedPriceValue}}</span></strong>             
+		<span class="product__price-qualifier">&nbsp;{{priceQualifier}}</span>
 	</div>
 	{{/with}}
 
 	<div class="product__offers">
-		<span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+		<ul class="product__offer-list list-unstyled">
+			{{#each promos}}
+				<li>
+					<span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+					<span>{{this.Description.[0].shortDescription}}</span>
+				</li>
+			{{/each}}
+		</ul>
 	</div>
 
 	<div class="product__quantity-controls">
 	</div>
 
-	<div class="product__add-item-container">
-		{{#if showPickupInStore}}
-			<button class="btn btn-block btn-secondary">pick up in a store</button>
-		{{/if}}
-		{{#if showAddToCart}}
-			<button class="btn btn-block btn-primary">add to cart</button>
-		{{/if}}
+	<div class="product__add-item-container col-xs-12">
+		<ul class="list-inline row">
+			{{#if showPickupInStore}}
+				<li class="col-xs-6">
+					<button class="btn btn-secondary btn-block">pick up in a store</button>
+				</li>
+			{{/if}}
+			{{#if showAddToCart}}
+				<li class="col-xs-6">
+					<button class="btn btn-primary btn-block">add to cart</button>
+				</li>
+			{{/if}}
+		</ul>
 	</div>
 
 	<div class="product__return-disclaimer col-xs-12">
