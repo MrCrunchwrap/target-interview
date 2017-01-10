@@ -1,0 +1,52 @@
+<div class="product">
+	<div class="product__title col-xs-12">
+		<h1>{{title}}</h1>
+	</div>
+
+	<div class="product__primary-image col-xs-12">
+		<img src="{{primaryImageUrl}}">
+	</div>
+
+	<div class="product__thumbnails">
+	</div>
+
+	{{#with priceData}}
+	<div class="product__price">
+		<p class="price">
+			<strong><span>{{formattedPriceValue}}</span></strong>             
+			<span>&nbsp;{{priceQualifier}}</span>                
+		</p>
+	</div>
+	{{/with}}
+
+	<div class="product__offers">
+	</div>
+
+	<div class="product__quantity-controls">
+	</div>
+
+	<div class="product__add-item-container">
+		{{#if showPickupInStore}}
+			<button class="btn btn-block btn-secondary">pick up in a store</button>
+		{{/if}}
+		{{#if showAddToCart}}
+			<button class="btn btn-block btn-primary">add to cart</button>
+		{{/if}}
+	</div>
+
+	<div class="product__return-disclaimer col-xs-12">
+
+	</div>
+
+	<div class="product-highlights col-xs-12">
+		<h2>product highlights</h2>
+
+		<ul class="product__details-list">
+			{{#each productFeatures}}
+				<li>{{{this}}}</li>
+			{{/each}}
+
+		</ul>
+	</div>
+
+</div>
