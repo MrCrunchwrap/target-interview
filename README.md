@@ -1,6 +1,7 @@
-# Webpack + MarionetteJS + Babel/ES6
+# Target Interview Case Study
 
-This is a modern JS skeleton with MarionetteJS for [Webpack](https://webpack.github.io/).
+This application was created for the Target Lead Engineer interview
+It uses Webpack + Marionette + ES6/Babel
 
 ## Getting started
 
@@ -8,7 +9,7 @@ This is a modern JS skeleton with MarionetteJS for [Webpack](https://webpack.git
     * Inside this folder run: `npm install`
 * Run:
     * `npm start` — starts project
+    * After starting project, open browswer and navigate to `http://localhost:8080/public/index.html`
     * `npm run build` - builds you project
-* Learn:
-    * `public/` dir is fully auto-generated and served by HTTP server.  Write your code in `app/` dir.
-    * Place static files you want to be copied from `app/assets/` and `app/styles/` to `public/`.
+* Test:
+	* `npm test` - runs unit tests
