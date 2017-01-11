@@ -16,6 +16,7 @@ export default Marionette.View.extend({
   		asNavFor: '.slider-nav'
   	});
 
+  	// initialize slick carousel navigation
   	this.$('.slider-nav').slick({
   		slidesToShow: 3,
   		slidesToScroll: 1,

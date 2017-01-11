@@ -42,10 +42,20 @@
 		</div>
 
 		<div class="product__quantity-controls">
+			<div class="col-xs-6">
+				quantity:
+
+				<div class="cssCircle minusSign" style="padding-top:00px">
+				  &#8211;
+				</div>
+				<div class="cssCircle plusSign">
+				  &#43;
+				</div>
+			</div>
 		</div>
 
 		<div class="product__add-item-container">
-			<ul class="list-inline row">
+			<ul class="list-inline clearfix">
 				{{#if showPickupInStore}}
 					<li class="col-xs-6">
 						<button class="btn store-pickup-btn btn-block">pick up in a store</button>
@@ -59,12 +69,23 @@
 			</ul>
 		</div>
 
-		<div class="product__return-disclaimer">
+		<div class="product__returns">
+			<div class="product__return-label">
+				<span>returns</span>
+			</div>
+
+			<ul>
+				<li class="product__return-policy">
+				  <span>
+				    This item must be returned within 30 days of the ship date. See <a href="return policy">return policy</a> for details. Prices, promotions, styles and availability may vary by store and online.
+				  </span>
+				</li>  
+			</ul>
 
 		</div>
 
 		<div class="product__other-actions-container">
-			<ul class="list-inline">
+			<ul class="list-inline clearfix">
 				<li class="col-xs-4">
 					<button class="btn btn-default btn-block">add to registry</button>
 				</li>
@@ -95,18 +116,24 @@
 		<div class="product__reviews">
 			<div class="row">
 				<div class="col-xs-6">
-				stuff
+					<h4>PRO</h4>
+					<span>most helpful 4-5 star review</span>
 				</div>
 				<div class="col-xs-6">
-				things
+					<h4>CON</h4>
+					<span>most helpful 1-2 star review</span>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-xs-6">
-				lots more stuff with lots more words to fill up content cool!
+					<h5>Fantastic blender</h5>
+					<p>Review text goes here and here and here and here and here and here and here and here</p>
+					<span>Eric April 18, 2013</span>
 				</div>
 				<div class="col-xs-6">
-				lots more stuff with lots more words to fill up content cool!
+					<h5>Very unhappy</h5>
+					<p>lots more stuff with lots more words to fill up content cool! lots more stuff with lots more words to fill up content cool!</p>
+					<span>New York March 11, 2013</span>
 				</div>
 			</div>
 		</div>
