@@ -6,6 +6,8 @@ export default Marionette.View.extend({
   template: productItemViewTemplate,
 
   ui: {
+  	$sliderFor: '.slider-for',
+  	$sliderNav: '.slider-nav',
     $addQuantity: '.product__quantity-value',
     $minusButton: '.js-quantity-minus',
     $plusButton: '.js-quantity-plus'
@@ -18,19 +20,19 @@ export default Marionette.View.extend({
 
   onDomRefresh() {
 
+  	this.getUI('$sliderFor')
+
   	// initialize slick carousel
-  	this.$('.slider-for').slick({
+  	this.getUI('$sliderFor').slick({
   		slidesToShow: 1,
-  		slidesToScroll: 1,
   		arrows: false,
   		fade: true,
   		asNavFor: '.slider-nav'
   	});
 
   	// initialize slick carousel navigation
-  	this.$('.slider-nav').slick({
+  	this.getUI('$sliderNav').slick({
   		slidesToShow: 3,
-  		slidesToScroll: 1,
   		asNavFor: '.slider-for',
   		dots: true,
   		centerMode: true,
