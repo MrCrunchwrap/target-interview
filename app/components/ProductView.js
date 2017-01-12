@@ -2,12 +2,11 @@ import Marionette from 'backbone.marionette';
 import productItemViewTemplate from '../templates/productItemViewTemplate.hbs';
 
 export default Marionette.View.extend({
-  
   template: productItemViewTemplate,
 
   ui: {
-  	$sliderFor: '.slider-for',
-  	$sliderNav: '.slider-nav',
+    $sliderFor: '.slider-for',
+    $sliderNav: '.slider-nav',
     $addQuantity: '.product__quantity-value',
     $minusButton: '.js-quantity-minus',
     $plusButton: '.js-quantity-plus'
@@ -20,24 +19,22 @@ export default Marionette.View.extend({
 
   onDomRefresh() {
 
-  	this.getUI('$sliderFor')
+    // initialize slick carousel
+    this.getUI('$sliderFor').slick({
+      slidesToShow: 1,
+      arrows: false,
+      fade: true,
+      asNavFor: '.slider-nav'
+    });
 
-  	// initialize slick carousel
-  	this.getUI('$sliderFor').slick({
-  		slidesToShow: 1,
-  		arrows: false,
-  		fade: true,
-  		asNavFor: '.slider-nav'
-  	});
-
-  	// initialize slick carousel navigation
-  	this.getUI('$sliderNav').slick({
-  		slidesToShow: 3,
-  		asNavFor: '.slider-for',
-  		dots: true,
-  		centerMode: true,
-  		focusOnSelect: true
-  	});
+    // initialize slick carousel navigation
+    this.getUI('$sliderNav').slick({
+      slidesToShow: 3,
+      asNavFor: '.slider-for',
+      dots: true,
+      centerMode: true,
+      focusOnSelect: true
+    });
   },
 
   updateQuantity() {
@@ -47,13 +44,11 @@ export default Marionette.View.extend({
   },
 
   onClickPlus() {
-    let quantity = this.model.get('productQuantity');
     this.model.increaseQuantity();
     this.updateQuantity();
   },
 
   onClickMinus() {
-    let quantity = this.model.get('productQuantity');
     this.model.decreaseQuantity();
     this.updateQuantity();
   }

@@ -9,7 +9,7 @@ export default Marionette.Application.extend({
   onStart() {
     let modelData = bootstrapData.CatalogEntryView[0];
     this.showView(new ProductView({
-        model: new ProductViewModel(modelData)
+      model: new ProductViewModel(modelData)
     }));
   }
 });
