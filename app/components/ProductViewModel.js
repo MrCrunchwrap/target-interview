@@ -7,6 +7,8 @@ export default Backbone.Model.extend({
 
   initialize(opts) {
     this.set({
+      con: opts.CustomerReview[0].Con[0],
+      pro: opts.CustomerReview[0].Pro[0],
       productFeatures: opts.ItemDescription[0].features,
       primaryImageUrl: opts.Images[0].PrimaryImage[0].image,
       showAddToCart: this.showAddToCart(opts.purchasingChannelCode),
