@@ -13,3 +13,5 @@ It uses Webpack + Marionette + ES6/Babel
     * `npm run build` - builds you project
 * Test:
 	* `npm test` - runs unit tests
+* Build:
+	* `webpack` - this command will build project to public folder. Simply open index.html from that folder to view project
