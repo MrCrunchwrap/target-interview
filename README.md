@@ -15,3 +15,8 @@ It uses Webpack + Marionette + ES6/Babel
 	* `npm test` - runs unit tests
 * Build:
 	* `webpack` - this command will build project to public folder. Simply open index.html from that folder to view project
+
+* Continuous Delivery - NOT IMPLEMENTED
+	* Would probably create a separate webpack config specifically for production
+	* Create server.js express server that responds on * with the webpack built index.html
+	* Use git hooks to deploy app when commits are pushed
