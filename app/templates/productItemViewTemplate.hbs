@@ -17,7 +17,7 @@
 
 		<div class="product__thumbnails slider-nav">
 			{{#each thumbnails}}
-				<img class="product__thumbnail" src="{{this.image}}">
+					<img class="product__thumbnail" src="{{this.image}}">
 			{{/each}}
 		</div>
 	</div>
@@ -134,12 +134,12 @@
 				<div class="col-xs-6">
 					<h5>{{pro.title}}</h5>
 					<p>{{pro.review}}</p>
-					<span>{{screenName}} April 18, 2013</span>
+					<span><a href="#">{{pro.screenName}}</a> April 18, 2013</span>
 				</div>
 				<div class="col-xs-6">
-					<h5>Very unhappy</h5>
-					<p>lots more stuff with lots more words to fill up content cool! lots more stuff with lots more words to fill up content cool!</p>
-					<span>New York March 11, 2013</span>
+					<h5>{{con.title}}</h5>
+					<p>{{con.review}}</p>
+					<span><a href="#">{{con.screenName}}</a> March 11, 2013</span>
 				</div>
 			</div>
 		</div>
