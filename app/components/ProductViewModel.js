@@ -1,15 +1,30 @@
 import Backbone from 'backbone'
 
 export default Backbone.Model.extend({
+  defaults: {
+    productQuantity: 1
+  },
+
   initialize(opts) {
-    // TODO: convert this to object hash
-    this.set('productFeatures', opts.ItemDescription[0].features);
-    this.set('primaryImageUrl', opts.Images[0].PrimaryImage[0].image);
-    this.set('showAddToCart', this.showAddToCart(opts.purchasingChannelCode));
-    this.set('showPickupInStore', this.showPickupInStore(opts.purchasingChannelCode));
-    this.set('priceData', opts.Offers[0].OfferPrice[0]);
-    this.set('promos', opts.Promotions);
-    this.set('thumbnails', opts.Images[0].AlternateImages)
+    this.set({
+      productFeatures: opts.ItemDescription[0].features,
+      primaryImageUrl: opts.Images[0].PrimaryImage[0].image,
+      showAddToCart: this.showAddToCart(opts.purchasingChannelCode),
+      showPickupInStore: this.showPickupInStore(opts.purchasingChannelCode),
+      priceData: opts.Offers[0].OfferPrice[0],
+      promos: opts.Promotions,
+      thumbnails: opts.Images[0].AlternateImages,
+    })
+  },
+
+  increaseQuantity() {
+    this.set('productQuantity', this.get('productQuantity') + 1);
+  },
+
+  decreaseQuantity() {
+    if (this.get('productQuantity') > 0) {
+      this.set('productQuantity', this.get('productQuantity') - 1);
+    }
   },
 
   showAddToCart(purchasingChannelCode) {

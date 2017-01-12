@@ -5,6 +5,17 @@ export default Marionette.View.extend({
   
   template: productItemViewTemplate,
 
+  ui: {
+    $addQuantity: '.product__quantity-value',
+    $minusButton: '.js-quantity-minus',
+    $plusButton: '.js-quantity-plus'
+  },
+
+  events: {
+    'click @ui.$plusButton': 'onClickPlus',
+    'click @ui.$minusButton': 'onClickMinus'
+  },
+
   onDomRefresh() {
 
   	// initialize slick carousel
@@ -25,5 +36,23 @@ export default Marionette.View.extend({
   		centerMode: true,
   		focusOnSelect: true
   	});
+  },
+
+  updateQuantity() {
+    // normally you would probably re-render a subview on model change, but this is so tiny
+    // it's silly to create a new view for it
+    this.getUI('$addQuantity').html(this.model.get('productQuantity'))
+  },
+
+  onClickPlus() {
+    let quantity = this.model.get('productQuantity');
+    this.model.increaseQuantity();
+    this.updateQuantity();
+  },
+
+  onClickMinus() {
+    let quantity = this.model.get('productQuantity');
+    this.model.decreaseQuantity();
+    this.updateQuantity();
   }
 });
